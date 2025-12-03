@@ -1,38 +1,58 @@
 /* Defaults */
 :root {
-	--font-family: -apple-system, system-ui, sans-serif;
-	--font-family-monospace: Consolas, Menlo, Monaco, Andale Mono WT, Andale Mono, Lucida Console, Lucida Sans Typewriter, DejaVu Sans Mono, Bitstream Vera Sans Mono, Liberation Mono, Nimbus Mono L, Courier New, Courier, monospace;
+  --font-family: 'Inter', -apple-system, system-ui, sans-serif;
+  --font-family-monospace: Consolas, Menlo, Monaco, "Roboto Mono", monospace;
 }
 
 /* Theme colors */
 :root {
-	--color-gray-20: #e0e0e0;
-	--color-gray-50: #C0C0C0;
-	--color-gray-90: #333;
+  --color-gray-20: #7B828A;
+  --color-gray-50: #A5ACAF;
+  --color-gray-90: #00338D;
 
-	--background-color: #fff;
+  --background-color: #FFFFFF;
+  --text-color: #111111;
 
-	--text-color: var(--color-gray-90);
-	--text-color-link: #082840;
-	--text-color-link-active: #5f2b48;
-	--text-color-link-visited: #17050F;
+  --text-color-link: #69BE28;
+  --text-color-link-active: #00338D;
+  --text-color-link-visited: #4fa31f;
 
-	--syntax-tab-size: 2;
+  --syntax-tab-size: 2;
+
+  --heading-font: 'Bebas Neue', sans-serif;
+  --subheading-font: 'Oswald', sans-serif;
 }
 
+/* Dark theme (modern Seahawks home) applies only when user hasn’t chosen */
 @media (prefers-color-scheme: dark) {
-	:root {
-		--color-gray-20: #e0e0e0;
-		--color-gray-50: #C0C0C0;
-		--color-gray-90: #dad8d8;
+	:root:not([data-theme]) {
+		--color-gray-20: #9FA9B5;
+		--color-gray-50: #A5ACAF;
+		--color-gray-90: #FFFFFF;
 
-		/* --text-color is assigned to --color-gray-_ above */
-		--text-color-link: #1493fb;
-		--text-color-link-active: #6969f7;
-		--text-color-link-visited: #a6a6f8;
+		--background-color: #002244;
+		--text-color: #FFFFFF;
 
-		--background-color: #15202b;
+		--text-color-link: #69BE28;
+		--text-color-link-active: #8CFF44;
+		--text-color-link-visited: #8CFF44;
 	}
+}
+
+/* Manual theme overrides */
+[data-theme="light"] {
+  color-scheme: light;
+}
+[data-theme="dark"] {
+  color-scheme: dark;
+  --color-gray-20: #9FA9B5;
+  --color-gray-50: #A5ACAF;
+  --color-gray-90: #FFFFFF;
+  --background-color: #002244;
+  --text-color: #FFFFFF;
+  --text-color-link: #69BE28;
+  --text-color-link-active: #8CFF44;
+  --text-color-link-visited: #8CFF44;
 }
 
 
@@ -47,17 +67,30 @@
 
 html,
 body {
-	padding: 0;
-	margin: 0 auto;
-	font-family: var(--font-family);
-	color: var(--text-color);
-	background-color: var(--background-color);
+  padding: 0;
+  margin: 0 auto;
+  font-family: var(--font-family);
+  color: var(--text-color);
+  background-color: var(--background-color);
+}
+h1, h2 {
+  font-family: var(--heading-font);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+h3, h4, h5 {
+  font-family: var(--subheading-font);
+  font-weight: 600;
+  letter-spacing: 0.5px;
 }
 html {
 	overflow-y: scroll;
 }
-body {
-	max-width: 40em;
+/* Use a centered container instead of constraining the body */
+.container {
+  max-width: 72ch;
+  margin-inline: auto;
+  padding-inline: 1rem;
 }
 
 /* https://www.a11yproject.com/posts/how-to-hide-content/ */
@@ -123,7 +156,24 @@ main :first-child {
 }
 
 header {
-	border-bottom: 1px dashed var(--color-gray-20);
+  position: relative;
+  display: flex;
+  gap: 1em;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0; /* padding handled by inner container */
+  background: #00338D; /* royal blue */
+  color: white;
+}
+header::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 4px;
+  background: linear-gradient(to right, #A5ACAF 0 20%, #69BE28 20% 100%);
 }
 
 #skip-link {
@@ -191,40 +241,73 @@ code {
 	word-break: break-all;
 }
 
-/* Header */
-header {
-	display: flex;
-	gap: 1em;
-	flex-wrap: wrap;
-	justify-content: space-between;
-	align-items: center;
-	padding: 1em;
+/* Header (specific) */
+.container > .home-link {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
 }
 .home-link {
-	flex-grow: 1;
-	font-size: 1em; /* 16px /16 */
-	font-weight: 700;
+  flex-grow: 1;
+  font-size: 1.25em;
+  font-weight: 700;
+  font-family: var(--heading-font);
+  letter-spacing: .5px;
+  text-transform: uppercase;
 }
 .home-link:link:not(:hover) {
-	text-decoration: none;
+  text-decoration: none;
 }
+
+header .container {
+  padding-block: 1rem;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+/* Theme toggle */
+.theme-toggle {
+  margin-left: auto;
+  appearance: none;
+  border: 1px solid rgba(255,255,255,.35);
+  background: transparent;
+  color: #fff;
+  padding: .4rem .6rem;
+  border-radius: .375rem;
+  cursor: pointer;
+}
+.theme-toggle:hover,
+.theme-toggle:focus-visible {
+  outline: none;
+  border-color: #69BE28;
+  box-shadow: 0 0 0 3px rgba(105,190,40,.25);
+}
+.theme-toggle__icon { display: inline-block; }
 
 /* Nav */
 .nav {
-	display: flex;
-	gap: .5em 1em;
-	padding: 0;
-	margin: 0;
-	list-style: none;
+  display: flex;
+  gap: .5em 1em;
+  padding: 0;
+  margin: 0;
+  list-style: none;
 }
 .nav-item {
-	display: inline-block;
+  display: inline-block;
 }
 .nav-item a[href]:not(:hover) {
-	text-decoration: none;
+  text-decoration: none;
 }
 .nav a[href][aria-current="page"] {
-	text-decoration: underline;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  text-decoration-thickness: 2px;
+}
+
+/* Footer */
+footer {
+  border-top: 1px solid var(--color-gray-20);
 }
 
 /* Posts list */
@@ -235,37 +318,48 @@ header {
 	padding-left: 1.5rem;
 }
 .postlist-item {
-	display: flex;
-	flex-wrap: wrap;
-	align-items: baseline;
-	counter-increment: start-from -1;
-	margin-bottom: 1em;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  counter-increment: start-from -1;
+  margin-bottom: 1em;
+  background: color-mix(in oklab, var(--background-color) 92%, #00338D 8%);
+  padding: .75rem .75rem;
+  border-radius: .5rem;
+  border: 1px solid color-mix(in oklab, #00338D 30%, transparent);
 }
 .postlist-item:before {
-	display: inline-block;
-	pointer-events: none;
-	content: "" counter(start-from, decimal-leading-zero) ". ";
-	line-height: 100%;
-	text-align: right;
-	margin-left: -1.5rem;
+  display: inline-block;
+  pointer-events: none;
+  content: "" counter(start-from, decimal-leading-zero) ". ";
+  line-height: 100%;
+  text-align: right;
+  margin-left: -1.5rem;
 }
 .postlist-date,
 .postlist-item:before {
 	font-size: 0.8125em; /* 13px /16 */
-	color: var(--color-gray-90);
+	color: var(--color-gray-50);
 }
 .postlist-date {
 	word-spacing: -0.5px;
 }
 .postlist-link {
-	font-size: 1.1875em; /* 19px /16 */
-	font-weight: 700;
-	flex-basis: calc(100% - 1.5rem);
-	padding-left: .25em;
-	padding-right: .5em;
-	text-underline-position: from-font;
-	text-underline-offset: 0;
-	text-decoration-thickness: 1px;
+  font-size: 1.1875em; /* 19px /16 */
+  font-weight: 700;
+  color: var(--color-gray-90);
+  font-family: var(--subheading-font);
+  text-transform: uppercase;
+  flex-basis: calc(100% - 1.5rem);
+  padding-left: .25em;
+  padding-right: .5em;
+  text-underline-position: from-font;
+  text-underline-offset: 0;
+  text-decoration-thickness: 1px;
+}
+.postlist-item:hover .postlist-link,
+.postlist-item:focus-within .postlist-link {
+  color: var(--text-color-link-active);
 }
 .postlist-item-active .postlist-link {
 	font-weight: bold;
@@ -296,3 +390,11 @@ header {
 	margin-right: 1em;
 }
 
+/* Forced dark theme support */
+.theme-dark {
+  --background-color: #002244;
+  --text-color: #FFFFFF;
+  --text-color-link: #69BE28;
+  --text-color-link-active: #8CFF44;
+  --text-color-link-visited: #8CFF44;
+}

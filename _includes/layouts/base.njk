@@ -7,6 +7,11 @@
 		<meta name="description" content="{{ description or metadata.description }}">
 		<link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="{{ metadata.title }}">
 
+		{# Fonts for headings/subheadings #}
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+
 		{#- Uncomment this if you’d like folks to know that you used Eleventy to build your site!  #}
 		{#- <meta name="generator" content="{{ eleventy.generator }}"> #}
 
@@ -43,32 +48,74 @@
 		<a href="#main" id="skip-link" class="visually-hidden">Skip to main content</a>
 
 		<header>
-			<a href="/" class="home-link">{{ metadata.title }}</a>
+		  <div class="container">
+		    <a href="/" class="home-link">{{ metadata.title }}</a>
 
-			{#- Read more about `eleventy-navigation` at https://www.11ty.dev/docs/plugins/navigation/ #}
-			<nav>
-				<h2 class="visually-hidden">Top level navigation menu</h2>
-				<ul class="nav">
-				{%- for entry in collections.all | eleventyNavigation %}
-					<li class="nav-item"><a href="{{ entry.url }}"{% if entry.url == page.url %} aria-current="page"{% endif %}>{{ entry.title }}</a></li>
-				{%- endfor %}
-				</ul>
-			</nav>
+		    <nav>
+		      <h2 class="visually-hidden">Top level navigation menu</h2>
+		      <ul class="nav">
+		        {%- for entry in collections.all | eleventyNavigation %}
+		          <li class="nav-item">
+		            <a href="{{ entry.url }}"{% if entry.url == page.url %} aria-current="page"{% endif %}>
+		              {{ entry.title }}
+		            </a>
+		          </li>
+		        {%- endfor %}
+		      </ul>
+		    </nav>
+
+		    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode" title="Toggle theme" aria-pressed="false">
+		      <span class="theme-toggle__icon" aria-hidden="true">🌙</span>
+		    </button>
+		  </div>
 		</header>
 
 		<main id="main">
-			<heading-anchors>
-				{{ content | safe }}
-			</heading-anchors>
+		  <div class="container">
+		    <heading-anchors>
+		      {{ content | safe }}
+		    </heading-anchors>
+		  </div>
 		</main>
 
 		<footer>
-			<p>
-				<em>Built with <a href="https://www.11ty.dev/">{{ eleventy.generator }}</a></em>
-			</p>
+		  <div class="container">
+		    <p>
+		      <em>Built with <a href="https://www.11ty.dev/">{{ eleventy.generator }}</a></em>
+		    </p>
+		  </div>
 		</footer>
 
 		<!-- This page `{{ page.url }}` was built on {% currentBuildDate %} -->
 		<script type="module" src="{% getBundleFileUrl "js" %}"></script>
+		<script>
+		  (function() {
+		    const storageKey = 'theme';
+		    const docEl = document.documentElement;
+		    const btn = document.getElementById('theme-toggle');
+		    const saved = localStorage.getItem(storageKey);
+		    if (saved === 'dark' || saved === 'light') {
+		      docEl.setAttribute('data-theme', saved);
+		    }
+      function currentTheme() {
+        return docEl.getAttribute('data-theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      }
+		    function updateButton(theme) {
+		      if (!btn) return;
+		      btn.setAttribute('aria-pressed', theme === 'dark' ? 'true' : 'false');
+		      btn.querySelector('.theme-toggle__icon').textContent = theme === 'dark' ? '🌞' : '🌙';
+		      btn.setAttribute('aria-label', theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
+		    }
+		    updateButton(currentTheme());
+		    if (btn) {
+		      btn.addEventListener('click', () => {
+		        const next = currentTheme() === 'dark' ? 'light' : 'dark';
+		        docEl.setAttribute('data-theme', next);
+		        localStorage.setItem(storageKey, next);
+		        updateButton(next);
+		      });
+		    }
+		  })();
+		</script>
 	</body>
 </html>
