@@ -7,15 +7,20 @@
 /* Theme colors */
 :root {
   --color-gray-20: #7B828A;
-  --color-gray-50: #A5ACAF;
+  /* Darken mid gray to improve small-text contrast on light backgrounds */
+  --color-gray-50: #6B7280; /* was #A5ACAF */
   --color-gray-90: #00338D;
 
   --background-color: #FFFFFF;
   --text-color: #111111;
 
-  --text-color-link: #69BE28;
-  --text-color-link-active: #00338D;
-  --text-color-link-visited: #4fa31f;
+  /* Accessibility: use high-contrast link colors in light theme */
+  --text-color-link: #00338D;          /* royal blue (AA on white) */
+  --text-color-link-active: #001A66;   /* darker blue for hover/active */
+  --text-color-link-visited: #4B2E83;  /* deep purple (Seahawks alt), AA */
+
+  /* Accent color for UI chrome (e.g., header hover), not for body text */
+  --accent-color: #69BE28;             /* action green */
 
   --syntax-tab-size: 2;
 
@@ -36,6 +41,7 @@
 		--text-color-link: #69BE28;
 		--text-color-link-active: #8CFF44;
 		--text-color-link-visited: #8CFF44;
+		--accent-color: #69BE28;
 	}
 }
 
@@ -46,13 +52,14 @@
 [data-theme="dark"] {
   color-scheme: dark;
   --color-gray-20: #9FA9B5;
-  --color-gray-50: #A5ACAF;
+  --color-gray-50: #C7CED6; /* lighter for dark bg readability */
   --color-gray-90: #FFFFFF;
   --background-color: #002244;
   --text-color: #FFFFFF;
   --text-color-link: #69BE28;
   --text-color-link-active: #8CFF44;
   --text-color-link-visited: #8CFF44;
+  --accent-color: #69BE28;
 }
 
 
@@ -144,7 +151,7 @@ a[href]:visited {
 }
 a[href]:hover,
 a[href]:active {
-	color: var(--text-color-link-active);
+  color: var(--text-color-link-active);
 }
 
 main,
@@ -315,7 +322,7 @@ header .nav a[href]:visited {
 }
 header .nav a[href]:hover,
 header .nav a[href]:focus-visible {
-  color: var(--text-color-link); /* action green */
+  color: var(--accent-color); /* action green accent for header only */
   text-decoration: none; /* no underline on hover */
 }
 
