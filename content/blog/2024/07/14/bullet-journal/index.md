@@ -1,7 +1,7 @@
 ---
 title: How I Use The Bullet Journal Method As A Software Engineer
 date: 2024-07-14T00:00:00.000Z
-tags: [productivity, bujo]
+tags: [productivity, bujo, bullet journal]
 ---
 
 I've been using the bullet journal method since 2018. In that time I've refined it to suit my needs, helping me be more productive especially in my job as a Software Engineer.
@@ -61,7 +61,8 @@ It reminds me of what I worked on yesterday, and what I will be working on today
 I try to set up my log for the next day as part of my nightly routine, checking my calendar for meetings etc.
 Then take any notes or rapid log during the day. Some of these notes can then be migrated to the collections below.
 
-![Daily-Stand-Up](dailyLog.jpg)
+![Daily Stand Up Log journal page](dailyLog.jpg)
+*Daily log used as stand‑up reference.*
 
 ### Backlog Refinement
 
@@ -69,7 +70,8 @@ This collection can be used to keep track of any tech debt items or bugs I think
 If there is not enough bandwidth for your item, it's great to have a reference point for a future sprint.
 As opposed to rooting through JIRA to find that ticket I am _sure_ I created a few months back.
 
-![Backlog](backlog.jpg)
+![Backlog journal page](backlog.jpg)
+*Tech‑debt ideas for future sprints.*
 
 ### Retrospective
 
@@ -78,7 +80,8 @@ But there are times when I think "I really should have brought this up in the re
 Maybe it was to give praise to a colleague, or discuss how to improve a certain process.
 Keeping a dedicated collection makes it easy to jot thoughts/issues as the sprint happens.
 
-![retro](retro.jpg)
+![Retro Notes journal page](retro.jpg)
+*Notes collected during the sprint for retro.*
 
 ### Brag Document
 

@@ -22,42 +22,29 @@ An average typing speed of about **30 words per minute** sounds bad… but I can
 
 I will rate the physical and mental pain of each step so far.
 
-#### 🏠 Step 1. Resting on the home keys
+|   Step   | Letters / Notes | Ouchies |
+|:--------:|------------------|:-------:|
+| 🏠 **1** | Resting on the home keys | 😖😖 |
+| 🚀 **2** | A, E, I, L, N, R | 😖😖😖😖️ |
+| 🤏 **3** | *Danger Here:* T | 😖😖😖😖😖 |
+| 🔠 **4** | O, S | 😖😖😖😖 |
+| 💀 **5** | *Are U Serious?* | 😖😖😖😖😖 |
+| 🧗 **6** | D, Y, C, G, H | 😖😖😖😖️ |
 
-**Ouchies:** 😖😖
-
-#### 🚀 Step 2. Beginner letters: A E I L N R
-**Ouchies:** 🌶️🌶️🌶️🌶️
-- Using the left pinky for **A** was challenging.
-- Bending my right index finger to reach **N** was rough.
-    - I felt instantly demoralised… but a few lessons later, it was fine.
-
-
-#### 🤏 Step 3 — Danger Here: T
-**Ouchies:** 😖😖😖😖😖
-- The delight of unlocking **T** was short-lived.
-- It took more than double the number of lessons to unlock the next letter. Tough going.
-
-#### 🔠 Step 4 — On a Roll: O, S
-**Ouchies:** 🌶️🌶️🌶️🌶️
-- **O** was mostly weird because of the straight finger movement.
-- **S** started badly but unlocked the next letter quickly.
-
-#### 💀 Step 5 — Are U Serious?
-**Ouchies:** 😖😖😖😖😖
-- This one took *forever*. A full-on mental block from my old hunt-and-peck habits.
-- It's interesting how you think you've mastered some letters, until introducing a new section of the keyboard completely fecks you over.
-  **I** and **E** took a nosedive here.
-
-#### 🧗 Step 6 & beyond. Are we there yet?
-- **D** — weirdly another mental struggle 🌶️🌶️🌶️🌶️
-- **Y** — suspiciously fine 😖
-- **C** — an absolute nightmare 🌶️🌶️🌶️🌶️🌶️
-- **G** — not too bad 😖😖 (in general, the left hand has been harder)
-- **H** — no major issues 🌶️
+---
 
 ![AllLetters](allLettersTouchType2.png)
 *All keys progress so far. P looking intimidating.*
+
+## Observations
+
+- Both left and right hand both had challenges.
+- Using the left pinky for **A** was a struggle.
+- Bending my right index finger to reach **N** was rough.
+	- I felt instantly demoralised… but a few lessons later, it was fine.
+- The delight of unlocking **T** was short-lived.
+  - It took more than double the number of lessons to unlock the next letter. Tough going.
+- It's interesting how you think you've mastered some letters, until introducing a new section of the keyboard completely fecks you over.
 
 ## The Final Boss: The Whole Keyboard
 

@@ -323,10 +323,9 @@ footer {
   align-items: baseline;
   counter-increment: start-from -1;
   margin-bottom: 1em;
-  background: color-mix(in oklab, var(--background-color) 92%, #00338D 8%);
-  padding: .75rem .75rem;
-  border-radius: .5rem;
-  border: 1px solid color-mix(in oklab, #00338D 30%, transparent);
+  /* Remove card-like box styling for simpler list appearance */
+  /* background: none; */
+  /* padding removed to align with plain list style */
 }
 .postlist-item:before {
   display: inline-block;
