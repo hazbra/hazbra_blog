@@ -7,6 +7,21 @@
 		<meta name="description" content="{{ description or metadata.description }}">
 		<link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="{{ metadata.title }}">
 
+		<!-- Favicon -->
+		<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+
+		{# Google Analytics (gtag.js) — place inside <head> in base.njk #}
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-672Y67EP4G"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-672Y67EP4G', {
+        anonymize_ip: true,
+        transport_type: 'beacon'
+      });
+    </script>
+
 		{# Fonts for headings/subheadings #}
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -100,12 +115,12 @@
       function currentTheme() {
         return docEl.getAttribute('data-theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
       }
-		    function updateButton(theme) {
-		      if (!btn) return;
-		      btn.setAttribute('aria-pressed', theme === 'dark' ? 'true' : 'false');
-		      btn.querySelector('.theme-toggle__icon').textContent = theme === 'dark' ? '🌞' : '🌙';
-		      btn.setAttribute('aria-label', theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
-		    }
+	    function updateButton(theme) {
+	      if (!btn) return;
+	      btn.setAttribute('aria-pressed', theme === 'dark' ? 'true' : 'false');
+	      btn.querySelector('.theme-toggle__icon').textContent = theme === 'dark' ? '☀️' : '🌙';
+	      btn.setAttribute('aria-label', theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
+	    }
 		    updateButton(currentTheme());
 		    if (btn) {
 		      btn.addEventListener('click', () => {

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <title>Site Icon</title>
+  <style>
+    text { font: 80px system-ui, -apple-system, Segoe UI Emoji, Apple Color Emoji, Noto Color Emoji, sans-serif; }
+  </style>
+  <text x="50" y="72" text-anchor="middle">🌰</text>
+</svg>

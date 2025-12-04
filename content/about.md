@@ -16,7 +16,7 @@ const eleventyNavigation = {
 	- Soccerball. Hon Ireland!
 	- American football. Go Seahawks!
 
-### This site
+### This blog
 
 I _intend_ to write a few blog posts, about side projects or my experiences in IT.
 

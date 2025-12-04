@@ -296,13 +296,41 @@ header .container {
 .nav-item {
   display: inline-block;
 }
-.nav-item a[href]:not(:hover) {
+.nav a[href] {
+  /* Never underline on hover; current page handled below */
   text-decoration: none;
 }
 .nav a[href][aria-current="page"] {
   text-decoration: underline;
   text-underline-offset: 2px;
   text-decoration-thickness: 2px;
+}
+
+/* Header nav contrast and hover behavior */
+header .nav a[href] {
+  color: #fff; /* ensure good contrast on royal-blue header */
+}
+header .nav a[href]:visited {
+  color: #fff; /* avoid default visited color on header */
+}
+header .nav a[href]:hover,
+header .nav a[href]:focus-visible {
+  color: var(--text-color-link); /* action green */
+  text-decoration: none; /* no underline on hover */
+}
+
+/* Header site title link behavior */
+header .home-link {
+  color: #fff;
+  text-decoration: none;
+}
+header .home-link:visited {
+  color: #fff;
+}
+header .home-link:hover,
+header .home-link:focus-visible {
+  color: var(--text-color-link);
+  text-decoration: none;
 }
 
 /* Footer */
