@@ -266,16 +266,25 @@ code {
   text-decoration: none;
 }
 
-header .container {
+/* Header layout: 3 columns -> title | nav | toggle */
+body > header .container {
   padding-block: 1rem;
-  display: flex;
+  display: grid;
+  width: 100%;
+  grid-template-columns: minmax(0, 1fr) auto auto;
   gap: 1rem;
   align-items: center;
 }
 
+/* Align items in grid columns */
+body > header .home-link { justify-self: start; }
+body > header nav { justify-self: end; margin-left: 0 !important; }
+body > header nav .nav { justify-content: flex-end; }
+body > header .theme-toggle { justify-self: end; }
+
 /* Theme toggle */
 .theme-toggle {
-  margin-left: auto;
+  margin-left: 0; /* keep next to nav; right alignment handled by .home-link flex */
   appearance: none;
   border: 1px solid rgba(255,255,255,.35);
   background: transparent;
