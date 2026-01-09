@@ -7,7 +7,6 @@ tags: [productivity, keyboard, touch-type, mixed nuts]
 I’m about 6 weeks in.
 
 I haven’t quite been hitting the daily quota, but I haven’t quit either.
-**TW:** the word *finger* is used a lot here.
 
 ## Stats
 
