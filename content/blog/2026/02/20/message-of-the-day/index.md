@@ -1,6 +1,6 @@
 ---
 title: Add a Message of the day to your terminal
-Date: 2026-02-20 22:21
+date: 2026-02-20T00:00:00.000Z
 tags: [bash, motd, terminal, tutorial]
 ---
 
