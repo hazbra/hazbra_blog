@@ -21,13 +21,13 @@ However, things took a turn after that milestone!
 
 I will rate the physical and mental pain of each step so far.
 
-|    Step    | Letters / Notes    | Ouchies |
-|:----------:|--------------------|:-------:|
-| 🐒 **13**  | Zippidy do dah     | 😖😖😖️ |
-| 🦖 **14**  | Velociraptor hands | 😖😖😖️ |
-|  ❌ **15**  | X marks the spot   | 😖😖😖😖 |
-| 🤓 **16**  | Quite Unintelligent | 😖😖😖😖😖 |
-| ⬇️️ **17** | Jlo west ouchies   | 😖 |
+|    Step    | Letters / Notes           | Ouchies |
+|:----------:|---------------------------|:-------:|
+| 🤐 **13**  | Zip that problematic song | 😖😖😖️ |
+| 🦖 **14**  | Velociraptor hands        | 😖😖😖️ |
+|  ❌ **15**  | X marks the spot          | 😖😖😖😖 |
+| 🤓 **16**  | Quite Unintelligent       | 😖😖😖😖😖 |
+| ⬇️️ **17** | Jlo west ouchies          | 😖 |
 
 ---
 
