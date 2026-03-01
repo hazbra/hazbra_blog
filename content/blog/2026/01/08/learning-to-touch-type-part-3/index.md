@@ -1,6 +1,7 @@
 ---
 title: Learning To Touch Type - Part 3
 date: 2026-01-08T00:00:00.000Z
+series: learning-to-touch-type
 tags: [productivity, keyboard, touch-type, mixed nuts]
 ---
 

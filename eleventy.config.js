@@ -110,6 +110,28 @@ export default async function(eleventyConfig) {
 		// selector: "h1,h2,h3,h4,h5,h6", // default
 	});
 
+	eleventyConfig.addCollection("series", function(collectionApi) {
+		const posts = collectionApi.getFilteredByTag("posts");
+		const seriesMap = {};
+
+		posts.forEach(post => {
+			const seriesName = post.data.series;
+			if (seriesName) {
+				if (!seriesMap[seriesName]) {
+					seriesMap[seriesName] = [];
+				}
+				seriesMap[seriesName].push(post);
+			}
+		});
+
+		// Ensure posts within each series are sorted by date
+		for (const seriesName in seriesMap) {
+			seriesMap[seriesName].sort((a, b) => a.date - b.date);
+		}
+
+		return seriesMap;
+	});
+
 	eleventyConfig.addShortcode("currentBuildDate", () => {
 		return (new Date()).toISOString();
 	});
